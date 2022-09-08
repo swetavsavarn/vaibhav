@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+</head>
+<body>
+    <form>
+    <input type="text" id="hii">
+    <input type="submit" value="submit" id="submit">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+</form>
+    <script>
+        document.getElementById('submit').addEventListener('click',(e)=>{
+            e.preventDefault()
+            const value1=document.getElementById('hii').value
+            
+            const obj={
+                value:value1
+
+            }
+         
+            axios.post('http://localhost:5000/db',obj).then(()=>{alert('db stored')})
+        })
+        
+    </script>
+    
+</body>
+</html>
